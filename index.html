@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flash Web | Criação de Sites Profissionais</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
+        :root { --primaria: #6366f1; --secundaria: #ec4899; --escuro: #0f172a; --claro: #f8fafc; }
+        body { background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%); min-height: 100vh; color: var(--claro); }
+        
+        header { padding: 1.5rem 5%; position: fixed; top: 0; width: 100%; background: rgba(15, 23, 42, 0.85); backdrop-filter: blur(10px); z-index: 100; }
+        nav { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-size: 1.5rem; font-weight: 800; background: linear-gradient(90deg, #6366f1, #ec4899); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .nav-links { display: flex; gap: 2rem; list-style: none; }
+        .nav-links a { color: #cbd5e1; text-decoration: none; font-weight: 500; transition: color 0.3s; }
+        .nav-links a:hover { color: #818cf8; }
+        
+        .hero { padding: 10rem 5% 6rem; text-align: center; max-width: 900px; margin: 0 auto; }
+        .hero h1 { font-size: 2.8rem; margin-bottom: 1.5rem; line-height: 1.2; }
+        .hero h1 span { background: linear-gradient(90deg, #6366f1, #ec4899); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .hero p { font-size: 1.2rem; color: #94a3b8; margin-bottom: 2.5rem; }
+        .btn { display: inline-block; padding: 1rem 2.5rem; background: linear-gradient(90deg, #6366f1, #ec4899); color: white; text-decoration: none; border-radius: 50px; font-weight: 600; font-size: 1.1rem; transition: transform 0.3s, box-shadow 0.3s; }
+        .btn:hover { transform: translateY(-3px); box-shadow: 0 10px 30px rgba(99, 102, 241, 0.4); }
+        
+        .servicos { padding: 5rem 5%; max-width: 1200px; margin: 0 auto; }
+        .servicos h2 { text-align: center; font-size: 2.2rem; margin-bottom: 4rem; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
+        .card { background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(99, 102, 241, 0.2); border-radius: 20px; padding: 2.5rem; transition: transform 0.3s, border-color 0.3s; }
+        .card:hover { transform: translateY(-8px); border-color: #6366f1; }
+        .card h3 { font-size: 1.4rem; margin-bottom: 1rem; color: #a5b4fc; }
+        .preco { font-size: 2rem; font-weight: 700; margin: 1.5rem 0; }
+        .preco span { font-size: 1rem; color: #94a3b8; }
+        
+        .sobre { padding: 5rem 5%; max-width: 800px; margin: 0 auto; text-align: center; }
+        .sobre h2 { font-size: 2rem; margin-bottom: 1.5rem; }
+        .sobre p { font-size: 1.1rem; color: #94a3b8; line-height: 1.8; }
+        
+        .contato { padding: 5rem 5%; max-width: 600px; margin: 0 auto; text-align: center; }
+        .contato h2 { font-size: 2rem; margin-bottom: 2rem; }
+        .contato-item { background: rgba(255, 255, 255, 0.05); padding: 1.2rem; border-radius: 12px; margin-bottom: 1rem; border-left: 3px solid #6366f1; }
+        .contato-item a { color: #a5b4fc; text-decoration: none; font-size: 1.05rem; }
+        .contato-item a:hover { color: #ffffff; }
+        
+        footer { text-align: center; padding: 3rem; border-top: 1px solid rgba(255,255,255,0.05); color: #64748b; font-size: 0.9rem; }
+        
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .hero h1 { font-size: 1.8rem; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">⚡ Flash Web</div>
+            <ul class="nav-links">
+                <li><a href="#inicio">Início</a></li>
+                <li><a href="#servicos">Serviços</a></li>
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero" id="inicio">
+        <h1>Criando sua <span>Presença Digital</span> com Velocidade e Qualidade</h1>
+        <p>Páginas web profissionais, responsivas e com design moderno. Seu negócio visível para o mundo em pouco tempo!</p>
+        <a href="#contato" class="btn">💬 Solicitar Orçamento</a>
+    </section>
+
+    <section class="servicos" id="servicos">
+        <h2>📦 Nossos Serviços</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>🌐 Página Web Simples</h3>
+                <p>Site profissional com apresentação, informações e contato. Ideal para começar online.</p>
+                <div class="preco">R$ 100 <span>/ à vista</span></div>
+                <a href="https://wa.me/5511914346849" class="btn">Pedir Agora →</a>
+            </div>
+            <div class="card">
+                <h3>🚀 Site Completo</h3>
+                <p>Várias seções, design personalizado, formulário e integração com WhatsApp.</p>
+                <div class="preco">R$ 200 <span>/ à vista</span></div>
+                <a href="https://wa.me/5511914346849" class="btn">Pedir Agora →</a>
+            </div>
+            <div class="card">
+                <h3>💎 Site Premium</h3>
+                <p>Design exclusivo, animações, otimizado para celular e SEO para o Google.</p>
+                <div class="preco">R$ 300 <span>/ à vista</span></div>
+                <a href="https://wa.me/5511914346849" class="btn">Pedir Agora →</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="sobre" id="sobre">
+        <h2>⚡ Sobre a Flash Web</h2>
+        <p>Somos apaixonados por criar soluções digitais rápidas e bonitas. Acreditamos que todo negócio merece um site profissional sem complicações e a preço justo. Do conceito ao lançamento, com você em cada passo.</p>
+    </section>
+
+    <section class="contato" id="contato">
+        <h2>📬 Fale Conosco</h2>
+        <div class="contato-item">
+            💬 <strong>WhatsApp:</strong> <a href="https://wa.me/5511914346849">+55 11 91434-6849</a>
+        </div>
+        <div class="contato-item">
+            📧 <strong>E-mail:</strong> <a href="mailto:xxxyorelpoo83@gmail.com">xxxyorelpoo83@gmail.com</a>
+        </div>
+        <p style="margin-top: 2rem; color: #94a3b8;">Responda o mais rápido possível! ⚡</p>
+    </section>
+
+    <footer>
+        <p>© 2026 Flash Web — Criando sua presença digital com velocidade.</p>
+        <p>Todos os direitos reservados.</p>
+    </footer>
+</body>
+</html>
