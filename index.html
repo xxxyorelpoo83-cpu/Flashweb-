@@ -3,115 +3,450 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Flash Web | Criação de Sites Profissionais</title>
+    <title>Flash Web — Criando sua Presença Digital ⚡</title>
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
-        :root { --primaria: #6366f1; --secundaria: #ec4899; --escuro: #0f172a; --claro: #f8fafc; }
-        body { background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%); min-height: 100vh; color: var(--claro); }
-        
-        header { padding: 1.5rem 5%; position: fixed; top: 0; width: 100%; background: rgba(15, 23, 42, 0.85); backdrop-filter: blur(10px); z-index: 100; }
-        nav { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
-        .logo { font-size: 1.5rem; font-weight: 800; background: linear-gradient(90deg, #6366f1, #ec4899); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        .nav-links { display: flex; gap: 2rem; list-style: none; }
-        .nav-links a { color: #cbd5e1; text-decoration: none; font-weight: 500; transition: color 0.3s; }
-        .nav-links a:hover { color: #818cf8; }
-        
-        .hero { padding: 10rem 5% 6rem; text-align: center; max-width: 900px; margin: 0 auto; }
-        .hero h1 { font-size: 2.8rem; margin-bottom: 1.5rem; line-height: 1.2; }
-        .hero h1 span { background: linear-gradient(90deg, #6366f1, #ec4899); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        .hero p { font-size: 1.2rem; color: #94a3b8; margin-bottom: 2.5rem; }
-        .btn { display: inline-block; padding: 1rem 2.5rem; background: linear-gradient(90deg, #6366f1, #ec4899); color: white; text-decoration: none; border-radius: 50px; font-weight: 600; font-size: 1.1rem; transition: transform 0.3s, box-shadow 0.3s; }
-        .btn:hover { transform: translateY(-3px); box-shadow: 0 10px 30px rgba(99, 102, 241, 0.4); }
-        
-        .servicos { padding: 5rem 5%; max-width: 1200px; margin: 0 auto; }
-        .servicos h2 { text-align: center; font-size: 2.2rem; margin-bottom: 4rem; }
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
-        .card { background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(99, 102, 241, 0.2); border-radius: 20px; padding: 2.5rem; transition: transform 0.3s, border-color 0.3s; }
-        .card:hover { transform: translateY(-8px); border-color: #6366f1; }
-        .card h3 { font-size: 1.4rem; margin-bottom: 1rem; color: #a5b4fc; }
-        .preco { font-size: 2rem; font-weight: 700; margin: 1.5rem 0; }
-        .preco span { font-size: 1rem; color: #94a3b8; }
-        
-        .sobre { padding: 5rem 5%; max-width: 800px; margin: 0 auto; text-align: center; }
-        .sobre h2 { font-size: 2rem; margin-bottom: 1.5rem; }
-        .sobre p { font-size: 1.1rem; color: #94a3b8; line-height: 1.8; }
-        
-        .contato { padding: 5rem 5%; max-width: 600px; margin: 0 auto; text-align: center; }
-        .contato h2 { font-size: 2rem; margin-bottom: 2rem; }
-        .contato-item { background: rgba(255, 255, 255, 0.05); padding: 1.2rem; border-radius: 12px; margin-bottom: 1rem; border-left: 3px solid #6366f1; }
-        .contato-item a { color: #a5b4fc; text-decoration: none; font-size: 1.05rem; }
-        .contato-item a:hover { color: #ffffff; }
-        
-        footer { text-align: center; padding: 3rem; border-top: 1px solid rgba(255,255,255,0.05); color: #64748b; font-size: 0.9rem; }
-        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        :root {
+            --primaria: #6366f1;
+            --secundaria: #ec4899;
+            --escuro: #0f172a;
+            --claro: #f8fafc;
+        }
+
+        body {
+            background-color: var(--escuro);
+            color: var(--claro);
+            line-height: 1.6;
+        }
+
+        header {
+            padding: 1.5rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            background: rgba(15, 23, 42, 0.95);
+            z-index: 100;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            background: linear-gradient(90deg, var(--primaria), var(--secundaria));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        nav a {
+            color: var(--claro);
+            text-decoration: none;
+            margin-left: 2rem;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--secundaria);
+        }
+
+        .hero {
+            padding: 6rem 5%;
+            text-align: center;
+            min-height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .hero span {
+            background: linear-gradient(90deg, var(--primaria), var(--secundaria));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            max-width: 800px;
+            margin: 0 auto 2.5rem;
+            color: #cbd5e1;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 1rem 2.5rem;
+            background: linear-gradient(90deg, var(--primaria), var(--secundaria));
+            color: white;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border-radius: 50px;
+            text-decoration: none;
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(99, 102, 241, 0.4);
+        }
+
+        section {
+            padding: 5rem 5%;
+        }
+
+        h2 {
+            font-size: 2.2rem;
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        h2 span {
+            color: var(--secundaria);
+        }
+
+        .servicos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .servico-card {
+            background: rgba(99, 102, 241, 0.1);
+            border: 1px solid rgba(99, 102, 241, 0.2);
+            border-radius: 16px;
+            padding: 2rem;
+            transition: transform 0.3s;
+        }
+
+        .servico-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--primaria);
+        }
+
+        .servico-card h3 {
+            font-size: 1.3rem;
+            margin: 1rem 0;
+            color: white;
+        }
+
+        .servico-card p {
+            color: #94a3b8;
+        }
+
+        .precos {
+            background: linear-gradient(180deg, rgba(99, 102, 241, 0.05), transparent);
+        }
+
+        .precos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .preco-card {
+            background: white;
+            color: var(--escuro);
+            border-radius: 20px;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+            transition: transform 0.3s;
+        }
+
+        .preco-card.destaque {
+            transform: scale(1.05);
+            border: 3px solid var(--primaria);
+        }
+
+        .preco-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .preco-card.destaque:hover {
+            transform: scale(1.05) translateY(-5px);
+        }
+
+        .preco-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+        }
+
+        .valor {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primaria);
+            margin-bottom: 1rem;
+        }
+
+        .preco-card ul {
+            list-style: none;
+            margin: 1.5rem 0;
+            text-align: left;
+        }
+
+        .preco-card li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .preco-card li::before {
+            content: "✅ ";
+            font-weight: bold;
+        }
+
+        .btn-preco {
+            display: block;
+            width: 100%;
+            padding: 0.8rem;
+            background: var(--primaria);
+            color: white;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 1rem;
+            transition: background 0.3s;
+        }
+
+        .btn-preco:hover {
+            background: var(--secundaria);
+        }
+
+        .depoimentos {
+            background: rgba(236, 72, 153, 0.03);
+        }
+
+        .depoimentos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .depoimento {
+            background: white;
+            color: var(--escuro);
+            padding: 2rem;
+            border-radius: 16px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+
+        .estrelas {
+            color: #f59e0b;
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+
+        .cliente {
+            font-weight: 600;
+            margin-top: 1rem;
+            color: var(--primaria);
+        }
+
+        .contato {
+            text-align: center;
+            background: linear-gradient(90deg, var(--primaria), var(--secundaria));
+            border-radius: 20px;
+            margin: 3rem 5%;
+            padding: 3rem;
+        }
+
+        .contato h2 {
+            margin-bottom: 1rem;
+        }
+
+        .contato p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .contato .btn {
+            background: white;
+            color: var(--primaria);
+            font-weight: 700;
+        }
+
+        footer {
+            text-align: center;
+            padding: 3rem 5%;
+            color: #64748b;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .redes {
+            margin-bottom: 1rem;
+        }
+
+        .redes a {
+            color: var(--claro);
+            margin: 0 0.5rem;
+            font-size: 1.5rem;
+            text-decoration: none;
+        }
+
         @media (max-width: 768px) {
-            .nav-links { display: none; }
-            .hero h1 { font-size: 1.8rem; }
+            .hero h1 { font-size: 2rem; }
+            nav { display: none; }
+            .preco-card.destaque { transform: none; }
+            .preco-card.destaque:hover { transform: translateY(-5px); }
         }
     </style>
 </head>
 <body>
     <header>
+        <div class="logo">⚡ Flash Web</div>
         <nav>
-            <div class="logo">⚡ Flash Web</div>
-            <ul class="nav-links">
-                <li><a href="#inicio">Início</a></li>
-                <li><a href="#servicos">Serviços</a></li>
-                <li><a href="#sobre">Sobre</a></li>
-                <li><a href="#contato">Contato</a></li>
-            </ul>
+            <a href="#inicio">Início</a>
+            <a href="#servicos">Serviços</a>
+            <a href="#precos">Preços</a>
+            <a href="#depoimentos">Depoimentos</a>
+            <a href="#contato">Contato</a>
         </nav>
     </header>
 
     <section class="hero" id="inicio">
-        <h1>Criando sua <span>Presença Digital</span> com Velocidade e Qualidade</h1>
-        <p>Páginas web profissionais, responsivas e com design moderno. Seu negócio visível para o mundo em pouco tempo!</p>
-        <a href="#contato" class="btn">💬 Solicitar Orçamento</a>
+        <h1>Criando sua <span>Presença Digital</span><br>com Velocidade e Qualidade</h1>
+        <p>✅ Sites profissionais, responsivos e com design moderno. Seu negócio visível para o mundo em pouco tempo! Entregue em até 48h ⚡</p>
+        <a href="https://wa.me/+5511914345849" class="btn" target="_blank">💬 Solicitar Orçamento</a>
     </section>
 
-    <section class="servicos" id="servicos">
-        <h2>📦 Nossos Serviços</h2>
-        <div class="grid">
-            <div class="card">
-                <h3>🌐 Página Web Simples</h3>
-                <p>Site profissional com apresentação, informações e contato. Ideal para começar online.</p>
-                <div class="preco">R$ 100 <span>/ à vista</span></div>
-                <a href="https://wa.me/5511914346849" class="btn">Pedir Agora →</a>
+    <section id="servicos">
+        <h2>Nossos <span>Serviços</span></h2>
+        <div class="servicos-grid">
+            <div class="servico-card">
+                <h3>🌐 Site Institucional</h3>
+                <p>Seu negócio com cara profissional. Apresente sua empresa, serviços e diferenciais com um design moderno e responsivo.</p>
             </div>
-            <div class="card">
-                <h3>🚀 Site Completo</h3>
-                <p>Várias seções, design personalizado, formulário e integração com WhatsApp.</p>
-                <div class="preco">R$ 200 <span>/ à vista</span></div>
-                <a href="https://wa.me/5511914346849" class="btn">Pedir Agora →</a>
+            <div class="servico-card">
+                <h3>🛒 Loja Virtual</h3>
+                <p>Venda seus produtos online! Catálogo, carrinho e formas de pagamento integradas. Comece a vender hoje mesmo.</p>
             </div>
-            <div class="card">
-                <h3>💎 Site Premium</h3>
-                <p>Design exclusivo, animações, otimizado para celular e SEO para o Google.</p>
-                <div class="preco">R$ 300 <span>/ à vista</span></div>
-                <a href="https://wa.me/5511914346849" class="btn">Pedir Agora →</a>
+            <div class="servico-card">
+                <h3>📱 Site One-Page</h3>
+                <p>Página única e direta. Ideal para pequenos negócios, profissionais liberais e lançamentos. Rápido e eficiente!</p>
+            </div>
+            <div class="servico-card">
+                <h3>🔄 Manutenção</h3>
+                <p>Atualizações, ajustes e melhorias no seu site já existente. Deixa tudo sempre atualizado e funcionando perfeitamente.</p>
+            </div>
+            <div class="servico-card">
+                <h3>🎨 Design Personalizado</h3>
+                <p>Identidade visual exclusiva para seu site. Cores, fontes e layout alinhados com a sua marca. Destaque-se da concorrência!</p>
+            </div>
+            <div class="servico-card">
+                <h3>🚀 Hospedagem & Domínio</h3>
+                <p>Cuido de tudo para você! Registro de domínio e hospedagem rápidos e seguros. Sem complicação.</p>
             </div>
         </div>
     </section>
 
-    <section class="sobre" id="sobre">
-        <h2>⚡ Sobre a Flash Web</h2>
-        <p>Somos apaixonados por criar soluções digitais rápidas e bonitas. Acreditamos que todo negócio merece um site profissional sem complicações e a preço justo. Do conceito ao lançamento, com você em cada passo.</p>
+    <section class="precos" id="precos">
+        <h2>Escolha seu <span>Plano</span></h2>
+        <div class="precos-grid">
+            <div class="preco-card">
+                <h3>📱 Básico</h3>
+                <div class="valor">R$ 199</div>
+                <p>Site One-Page</p>
+                <ul>
+                    <li>1 página completa</li>
+                    <li>Design responsivo</li>
+                    <li>WhatsApp integrado</li>
+                    <li>Entrega em 48h</li>
+                    <li>1 revisão grátis</li>
+                </ul>
+                <a href="https://wa.me/SEUNUMEROAQUI?text=Olá! Quero o plano Básico!" class="btn-preco" target="_blank">Pedir Agora</a>
+            </div>
+
+            <div class="preco-card destaque">
+                <h3>⭐ Mais Popular</h3>
+                <div class="valor">R$ 349</div>
+                <p>Site Completo</p>
+                <ul>
+                    <li>Até 5 páginas</li>
+                    <li>Design responsivo</li>
+                    <li>Formulário de contato</li>
+                    <li>Google Maps</li>
+                    <li>Redes sociais</li>
+                    <li>3 revisões grátis</li>
+                </ul>
+                <a href="https://wa.me/SEUNUMEROAQUI?text=Olá! Quero o plano Completo!" class="btn-preco" target="_blank">Pedir Agora</a>
+            </div>
+
+            <div class="preco-card">
+                <h3>🏆 Profissional</h3>
+                <div class="valor">R$ 599</div>
+                <p>Site Premium</p>
+                <ul>
+                    <li>Páginas ilimitadas</li>
+                    <li>Animações e efeitos</li>
+                    <li>SEO otimizado Google</li>
+                    <li>Analytics incluso</li>
+                    <li>Domínio grátis 1 ano</li>
+                    <li>Manutenção 1 mês grátis</li>
+                </ul>
+                <a href="https://wa.me/SEUNUMEROAQUI?text=Olá! Quero o plano Premium!" class="btn-preco" target="_blank">Pedir Agora</a>
+            </div>
+        </div>
     </section>
 
-    <section class="contato" id="contato">
-        <h2>📬 Fale Conosco</h2>
-        <div class="contato-item">
-            💬 <strong>WhatsApp:</strong> <a href="https://wa.me/5511914346849">+55 11 91434-6849</a>
+    <section class="depoimentos" id="depoimentos">
+        <h2>O que dizem <span>nossos clientes</span></h2>
+        <div class="depoimentos-grid">
+            <div class="depoimento">
+                <div class="estrelas">⭐⭐⭐⭐⭐</div>
+                <p>"Ficou exatamente como eu queria! Rápido, profissional e o preço cabe no bolso. Recomendo demais!"</p>
+                <div class="cliente">— Maria, Loja de Roupas</div>
+            </div>
+            <div class="depoimento">
+                <div class="estrelas">⭐⭐⭐⭐⭐</div>
+                <p>"Meu site ficou incrível! Já recebi vários pedidos pelo WhatsApp. Valeu pelo trabalho excelente!"</p>
+                <div class="cliente">— João, Serviços de Pintura</div>
+            </div>
+            <div class="depoimento">
+                <div class="estrelas">⭐⭐⭐⭐⭐</div>
+                <p>Atendimento nota 10! Sempre tirando minhas dúvidas e entregando antes do prazo. Muito satisfeito!"</p>
+                <div class="cliente">— Ana, Consultoria</div>
+            </div>
         </div>
-        <div class="contato-item">
-            📧 <strong>E-mail:</strong> <a href="mailto:xxxyorelpoo83@gmail.com">xxxyorelpoo83@gmail.com</a>
-        </div>
-        <p style="margin-top: 2rem; color: #94a3b8;">Responda o mais rápido possível! ⚡</p>
     </section>
+
+    <div class="contato" id="contato">
+        <h2>🚀 Pronto para crescer?</h2>
+        <p>Não deixe seu negócio sem presença online. Vamos criar algo incrível juntos!</p>
+        <a href="https://wa.me/SEUNUMEROAQUI" class="btn" target="_blank">💬 Falar no WhatsApp</a>
+    </div>
 
     <footer>
-        <p>© 2026 Flash Web — Criando sua presença digital com velocidade.</p>
-        <p>Todos os direitos reservados.</p>
+        <div class="redes">
+            <a href="#" target="_blank">📷</a>
+            <a href="#" target="_blank">📘</a>
+            <a href="#" target="_blank">💼</a>
+        </div>
+        <p>⚡ Flash Web — Criando sua Presença Digital<br>Contato: (XX) XXXXX-XXXX | Seu Cidade - BR</p>
+        <p style="margin-top: 1rem; font-size: 0.9rem;">© 2026 Flash Web — Todos os direitos reservados</p>
     </footer>
 </body>
 </html>
